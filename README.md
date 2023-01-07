@@ -1,6 +1,8 @@
 # MovieDatabase
 
-This repo contains html, css, and JavaScript files. The data is from The Movie Database API that can be found using this link: https://www.themoviedb.org/documentation/api
+This repo contains html, css, and JavaScript files. The webpage display movie's posters, title, and overview. The users can search a movie in TMDB API. If the search returns without any results, the user will be notified of the fact. 
+
+The data is from The Movie Database API that can be found using this link: https://www.themoviedb.org/documentation/api
 
 1. `index.html` most important feature is the search bar and the tags used to display movie information such as images and titles.
 
