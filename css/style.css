@@ -15,6 +15,10 @@ header{
     background-color: var(--secondary-color);
 }
 
+.navbar-brand {
+    margin: auto 4rem;
+}
+
 .search{
     background-color: transparent;
     border: 2px solid black;
