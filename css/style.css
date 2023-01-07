@@ -1,0 +1,82 @@
+/**
+The CSS file below is based off of the following source:
+https://www.youtube.com/watch?v=9Bvt6BFf6_U
+*/
+
+body{
+    background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--secondary-color);
+}
+
+.search{
+    background-color: transparent;
+    border: 2px solid black;
+    padding: 0.7rem 1rem;
+    width: 20rem;
+    margin: -15px 9px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+.search:focus{
+    outline: 0;
+    background-color: white;
+}
+
+.search::placeholder{
+    color: black;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie{
+    width: 300px;
+    margin: 1rem;
+    padding: 5px 5px;
+    border-radius: 6px;
+    box-shadow: 0.3px 5px 2px black;
+    background-color: lightskyblue;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie img{
+    width: 100%;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 1rem;
+}
+
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightgray;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translate(-101%);
+    transition: transform 0.3s ease-in-out;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+
+.movie:hover .overview{
+    transform: translate(0);
+}
