@@ -6,6 +6,12 @@
  * https://api.themoviedb.org/3/search/movie?api_key=<api_key>&query=<query>
  * https://api.themoviedb.org/3/movie/popular?api_key=<api_key>
  * 
+ * This JavaScript has the following functions:
+ * 
+ * * getMovies() - Uses the url and API key to access the JSON database and grabs the data we needed (results)
+ * * showMovies() - Takes in the data and displays the movies title, poster, and overview
+ * * form.addEventListener - When user presses enter after entering a search term, display their search results
+ *                           If nothing was found, the user will be notified that nothing was found.
  */
 
 
@@ -21,33 +27,33 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
+
 getMovies(api_url);
 
-function getMovies(url) {
 
-    // Fetch TMDB API in JSON using the url and pass the results section of the data
+// Fetch TMDB API in JSON using the url and pass the results section of the data to showMovies
+function getMovies(url) {
     fetch(url).then(res => res.json()).then(data => {
         showMovies(data.results);
     })
 }
 
-// Pass the data into the function showMovies to display movie info
+// Takes in the data and displays movie info
 function showMovies(data){
     main.innerHTML = '';
 
     // If there is no results from the search, let the user know
     if (data == 0) {
-        //alert('Sorry! We could not find anything! Please try again.');
         main.appendChild(document.createTextNode('Sorry! We could not find anything! Please try again.'));
     } 
     
     else {
         data.forEach(movie => {
+
             // Store the title, poster_path, and overview from the API
-            const {title, poster_path, overview} = movie;
-        
             // Create a div tag and add a movie class into div
             // Then add tags & content into the HTML and concat the data we need such as the title
+            const {title, poster_path, overview} = movie;
             const movieElement = document.createElement('div');
             movieElement.classList.add('movie');
         
